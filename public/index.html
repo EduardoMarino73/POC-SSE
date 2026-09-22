@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TOP 50 · LIVE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div id="loginGate" class="login-gate">
+    <div class="login-card">
+      <div class="brand-mark">TOP&nbsp;50</div>
+      <div class="brand-sub">TUS MÁS ESCUCHADAS · EN VIVO</div>
+      <p class="login-copy">Conectá tu cuenta de Spotify para ver tu propio top 50 actualizarse en vivo.</p>
+      <a class="login-btn" href="/login">Conectar con Spotify</a>
+    </div>
+  </div>
+
+  <div id="app" hidden>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">TOP&nbsp;50</span>
+        <span class="brand-sub">TUS MÁS ESCUCHADAS</span>
+      </div>
+      <div class="controls">
+        <select id="rangeSelect">
+          <option value="short_term">Últimas 4 semanas</option>
+          <option value="medium_term" selected>Últimos 6 meses</option>
+          <option value="long_term">Siempre</option>
+        </select>
+        <span class="user-name" id="userName"></span>
+        <a class="logout-link" href="/logout">salir</a>
+      </div>
+      <div class="status" id="status">
+        <span class="dot" id="statusDot"></span>
+        <span id="statusText">conectando…</span>
+        <span class="badge" id="modeBadge" hidden>DEMO</span>
+      </div>
+    </header>
+
+    <main class="board" id="board" aria-live="polite"></main>
+
+    <footer class="ticker-wrap" aria-label="Movimientos recientes">
+      <div class="ticker-label">MOVIMIENTOS</div>
+      <div class="ticker-track" id="tickerTrack">
+        <span class="ticker-empty">esperando datos…</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

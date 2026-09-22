@@ -19,17 +19,14 @@ Spotify no ofrece push/streaming de datos, así que el patrón es:
 node server.js
 ```
 
-Abrí `http://localhost:3000`. Sin configurar nada, arranca en **modo demo**
-con datos simulados para que veas el flujo funcionando de punta a punta.
+## Conectarlo a Spotify 
 
-## Conectarlo a Spotify real
-
-1. Copiá `.env.example` a `.env`. 
+1. Copiá `.env`. 
 2. Creá una app en el [dashboard de Spotify for Developers](https://developer.spotify.com/dashboard)
    y pegá el `Client ID` / `Client Secret` en `.env`.
-3. Reiniciá `node server.js` — el log te va a confirmar `Modo: REAL (Spotify API)`.
+3. Reiniciá `node server.js` — el log te va a confirmar Modo: Spotify API.
 
-## Limitaciones a tener en cuenta (API de Spotify, 2026)
+## Limitaciones a tener en cuenta (API de Spotify, 2026 con cambios raros)
 
 - **`preview_url`** (30s de audio) puede no venir disponible para apps nuevas.
 - Desde **feb-2026**, el modo "Developer Mode" de Spotify limita a 5 usuarios
